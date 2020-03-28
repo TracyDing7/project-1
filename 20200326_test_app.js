@@ -17,8 +17,11 @@ $(document).ready(function () {
             console.log(response.drinks[0]);
             for (let i = 0; i < 5; i++) {
                 var drinkName = response.drinks[i].strDrink;
+                var drinkId = response.drinks[i].idDrink;
+                console.log(drinkId);
                 console.log(drinkName);
-                $("#drink-display").append(`<p class="drink-name">Drink Name: ${drinkName}</p>`);
+                var drinkUrl = "https://www.thecocktaildb.com/drink/" + drinkId;
+                $("#drink-display").append(`<a class="drink-name" href="${drinkUrl}">${drinkName}</a>`);
 
                 $("#drink-display").append(`<img class="drink-image" src="${response.drinks[i].strDrinkThumb}">`);
             }

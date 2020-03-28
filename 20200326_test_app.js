@@ -1,11 +1,12 @@
 $(document).ready(function () {
 
-    var queryUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
-
 //change onclick from $("#gin").on("click" to : 
     $(".alcohol").on("click", function () {
         console.log("alcohol selected");
+        
+        $("#drink-display").empty();
 
+        var queryUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
         var alcohol = $(this).attr("value");
         console.log(alcohol);
 
@@ -20,6 +21,7 @@ $(document).ready(function () {
                 var drinkId = response.drinks[i].idDrink;
                 console.log(drinkId);
                 console.log(drinkName);
+
                 var drinkUrl = "https://www.thecocktaildb.com/drink/" + drinkId;
                 $("#drink-display").append(`<a class="drink-name" href="${drinkUrl}">${drinkName}</a>`);
 

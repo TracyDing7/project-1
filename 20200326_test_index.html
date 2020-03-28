@@ -8,48 +8,46 @@
     <title>Test Drink API Display</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="20200328_test_style.css">
+    <link rel="stylesheet" href="20200328_test_style.css">
 </head>
 
 <body>
     <div class="drink-search">
-        <h5>Pick your poison (the base of your cocktail): </h5>
-        <!-- <div class="input-group mb-3">
-            <div class="input-group-prepend"> -->
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item alcohol" id="gin" value="gin">Gin</a>
-                    <a class="dropdown-item alcohol" id="vodka" value="vodka">Vodka</a>
-                    <a class="dropdown-item alcohol" id="tequila" value="tequila">Tequila</a>
-                    <a class="dropdown-item alcohol" id="mezcal" value="mezcal">Mezcal</a>
-                    <a class="dropdown-item alcohol" id="rum" value="rum">Rum</a>
-                    <a class="dropdown-item alcohol" id="brandy" value="brandy">Brandy</a>
-                    <a class="dropdown-item alcohol" id="whiskey" value="whiskey">Whiskey</a>
-                    <a class="dropdown-item alcohol" id="scotch" value="scotch">Scotch</a>
-                    <a class="dropdown-item alcohol" id="bourbon" value="bourbon">Bourbon</a>
-                    <!-- <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">I take it straight, no chaser!</a> -->
-                </div>
-            <!-- </div>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-        </div> -->
+        <h5>Select the alcohol base of your cocktail</h5>
 
-    </div>
-    <div id="drink-display">
+        <div class="btn-group dropright">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Pick your poison!
+            </button>
+            <!-- <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Select alcohol base for your cocktail</button> -->
+            <div class="dropdown-menu">
+                <a class="dropdown-item alcohol" id="gin" value="gin">Gin</a>
+                <a class="dropdown-item alcohol" id="vodka" value="vodka">Vodka</a>
+                <a class="dropdown-item alcohol" id="tequila" value="tequila">Tequila</a>
+                <a class="dropdown-item alcohol" id="mezcal" value="mezcal">Mezcal</a>
+                <a class="dropdown-item alcohol" id="rum" value="rum">Rum</a>
+                <a class="dropdown-item alcohol" id="brandy" value="brandy">Brandy</a>
+                <a class="dropdown-item alcohol" id="whiskey" value="whiskey">Whiskey</a>
+                <a class="dropdown-item alcohol" id="scotch" value="scotch">Scotch</a>
+                <a class="dropdown-item alcohol" id="bourbon" value="bourbon">Bourbon</a>
+            </div>
+        </div>
+        <div id="drink-display">
 
-    </div>
+        </div>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <script src="20200326_test_app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="20200326_test_app.js"></script>
 </body>
 
 </html>

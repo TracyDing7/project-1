@@ -26,9 +26,5 @@ $(document).ready(function () {
                 $("#drink-display").append(`<img class="drink-image" src="${response.drinks[i].strDrinkThumb}">`);
             }
         })
-
     })
-
-
-
 })

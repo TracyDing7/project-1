@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>API TEST PAGE</title>
+</head>
+<body>
+    
+    <form>
+        <div class="form-group">
+          <label for="addIngredient">enter an ingredient</label>
+          <input type="text" class="form-control" id="addIngredient" />
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-submit">
+          Submit
+        </button>
+      </form>
+    <div id="recipe-results"></div>
+
+    <script src="api_keys.js"></script>
+    <script src="spoonacular-api-call.js" async></script> 
+</body>
+</html>

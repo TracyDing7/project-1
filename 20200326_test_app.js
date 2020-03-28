@@ -23,7 +23,7 @@ $(document).ready(function () {
                 console.log(drinkName);
 
                 var drinkUrl = "https://www.thecocktaildb.com/drink/" + drinkId;
-                $("#drink-display").append(`<a class="drink-name" href="${drinkUrl}">${drinkName}</a>`);
+                $("#drink-display").append(`<a class="drink-name" target="_blank" href="${drinkUrl}">${drinkName}</a>`);
 
                 $("#drink-display").append(`<img class="drink-image" src="${response.drinks[i].strDrinkThumb}">`);
             }

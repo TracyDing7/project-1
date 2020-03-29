@@ -24,11 +24,12 @@ function getRecipeList(term) {
     
            var idLink = response.sourceUrl;
            console.log(idLink);
-            $("#recipe-results").append(`Prep Time: ${response.preparationMinutes}`, `Total Cooking Time: ${response.cookingMinutes}`);
+           $("#recipe-results").prepend(`<h1><a href="${idLink}" target="_blank">${response.title}</a></h1>`);
+            $("#recipe-results").append(`Total Cook Time: ${response.readyInMinutes} minutes`, `Serves: ${response.servings}`);
     
         });
 
-      $("#recipe-results").append(`<h1>${response[0].title}</h1>`, `<img src="${response[0].image}"/>`, `<h2>"Ingredients You Need: "${response[0].missedIngredients[0].name}</h2>`);
+      $("#recipe-results").append(`<img src="${response[0].image}"/>`, `<h2>"Ingredients You Need: "${response[0].missedIngredients[0].name}</h2>`);
     });
   }
 

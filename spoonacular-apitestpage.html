@@ -8,6 +8,10 @@
 </head>
 <body>
     
+
+  <div id="btn-div"></div>
+
+  
     <form>
         <div class="form-group">
           <label for="addIngredient">enter an ingredient</label>
@@ -17,7 +21,18 @@
           Submit
         </button>
       </form>
-    <div id="recipe-results"></div>
+      <div class="container">
+        <div class="md-col-4" id="recipe-results"></div>
+      </div>
+
+      <div class="card text-center" id="recipe-card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go To Recipe!</a>
+        </div>
+      </div>
+    
 
     <script src="api_keys.js"></script>
     <script src="spoonacular-api-call.js" async></script> 

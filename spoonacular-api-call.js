@@ -7,13 +7,12 @@ for (var i = 0; i < commonIngredients.length; i++) {
     `<button class="btn btn-secondary">${commonIngredients[i]}</button>`
   );
 }
-// when button is clicked take the value of button and send to search for that term
+
 $(document).on("click", ".btn-secondary", function() {
   var ingredient = $(this).val();
   console.log($(this).val());
 });
 */
-
 
 
 function getRecipeList(term) {
@@ -31,30 +30,21 @@ function getRecipeList(term) {
 
     $.ajax(req).then(function(ingredientResponse) {
         console.log(ingredientResponse);
-        results = ingredientResponse;
-        for (var i = 0; i < 5; i++) {
-          var id = ingredientResponse[i].id;
-          var endPointLinks = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false${apiKey}`;
-
-          
-  
+       ingredientResponse.forEach(function(val, i) {
           $.ajax({
-              url: endPointLinks,
-              method: 'GET'
-          }).then(function(recipeResponse) {
-              console.log(recipeResponse);
-      
-             var idLink = recipeResponse.sourceUrl;
-             //console.log(idLink);
-            
-              console.log(i);
-              $("#recipe-results").append(`<h1><a href="${idLink}" target="_blank">${recipeResponse.title}</a></h1>`, `<img src="${recipeResponse.image}"/>`,`<h2>Ingredients: ${ingredientResponse[i].usedIngredient[i].name}</h2>`);
-              $("#recipe-results").append(`Total Cook Time: ${recipeResponse.readyInMinutes} minutes`, `Serves: ${recipeResponse.servings}`); 
-             
-      
-          });
+            url: `https://api.spoonacular.com/recipes/${val.id}/information?includeNutrition=false${apiKey}`,
+            method: 'GET'
+          }).then(function(res) {
+            console.log("the value of i is " + i);
+            console.log(res);
 
-        }
+            var cardInfo = (`<div class="card" style="width: 18rem;"><img class="card-img-top" src="${res.image}" alt="${res.title}"/><div class="card-body"><h5 class="card-title">${res.title}</h5><p>Total Cook Time: ${res.readyInMinutes} minutes Serves: ${res.servings}</p><a href="${res.sourceUrl}" target="_blank" class="btn btn-secondary">Submit</a></div></div>`);
+
+            $("#recipe-results").append(`${cardInfo}`);
+          });
+       });
+
+      
     });
   }
    

@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    //experimental materialize carousel
+    $('.carousel').carousel();
+
     //change onclick from $("#gin").on("click" to : 
     $(".alcohol").on("click", function () {
         console.log("alcohol selected");
@@ -28,8 +31,9 @@ $(document).ready(function () {
 
                 // $("#drink-display").append(`<img class="drink-image" src="${drinkImg}">`);
 
-                var drinkCard = (`<div class="card" style="width: 18rem;"><img class="card-img-top" src="${drinkImg}" alt="${drinkName}"/><div class="card-body"><a href="${drinkUrl}" target="_blank"><h5 class="card-title">${drinkName}</h5></a></div></div>`);
+                var drinkCard = (`<div class="card carousel-item" style="width: 18rem;"><img class="card-img-top" src="${drinkImg}" alt="${drinkName}"/><div class="card-body"><a href="${drinkUrl}" target="_blank"><h5 class="card-title">${drinkName}</h5></a></div></div>`);
                 $("#drink-display").append(`${drinkCard}`);
+                $(".carousel").carousel();
             }
         })
     })

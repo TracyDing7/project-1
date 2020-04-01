@@ -1,3 +1,20 @@
+/*let commonIngredients = ["tomatoes", "potatoes", "ground beef", "chicken", "turkey", "lettuce", "bread", "rice", "eggs", "cheese", "milk", "butter", "flour", "spinach", "tofu", "mushrooms", "pasta", "onion"];
+
+
+//function ingredientBtn = 
+for (var i = 0; i < commonIngredients.length; i++) {
+  $("#btn-div").append(
+    `<button class="btn btn-secondary">${commonIngredients[i]}</button>`
+  );
+}
+
+$(document).on("click", ".btn-secondary", function() {
+  var ingredient = $(this).val();
+  console.log($(this).val());
+});
+*/
+
+
 function getRecipeList(term) {
     var endPoint = "https://api.spoonacular.com/recipes/findByIngredients?";
     var apiKey = `&apiKey=${SPOONACULAR_API}`;
@@ -8,56 +25,34 @@ function getRecipeList(term) {
       url: queryURL,
       method: "GET"
     };
-  
-    $.ajax(req).then(function(response) {
-        console.log(response);
+    
+    var results;
 
-        var id = response[0].id;
-        var endPointLinks = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false${apiKey}`;
-        console.log(endPointLinks);
-
-        $.ajax({
-            url: endPointLinks,
+    $.ajax(req).then(function(ingredientResponse) {
+        console.log(ingredientResponse);
+       ingredientResponse.forEach(function(val, i) {
+          $.ajax({
+            url: `https://api.spoonacular.com/recipes/${val.id}/information?includeNutrition=false${apiKey}`,
             method: 'GET'
-        }).then(function(response) {
-            console.log(response);
-    
-           var idLink = response.sourceUrl;
-           console.log(idLink);
-            $("#recipe-results").append(`Prep Time: ${response.preparationMinutes}`, `Total Cooking Time: ${response.cookingMinutes}`);
-    
-        });
+          }).then(function(res) {
+            console.log("the value of i is " + i);
+            console.log(res);
 
-      $("#recipe-results").append(`<h1>${response[0].title}</h1>`, `<img src="${response[0].image}"/>`, `<h2>"Ingredients You Need: "${response[0].missedIngredients[0].name}</h2>`);
+            var cardInfo = (`<div class="card" style="width: 18rem;"><img class="card-img-top" src="${res.image}" alt="${res.title}"/><div class="card-body"><h5 class="card-title">${res.title}</h5><p>Total Cook Time: ${res.readyInMinutes} minutes Serves: ${res.servings}</p><a href="${res.sourceUrl}" target="_blank" class="btn btn-secondary">Submit</a></div></div>`);
+
+            $("#recipe-results").append(`${cardInfo}`);
+          });
+       });
+
+      
     });
   }
+   
 
- /* function getRecipeLink(id) {
-    var endPointLinks = `https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false`
-
-    var queryURL = endPointLinks + apiKey;
-
-    var req = {
-        url: queryURL,
-        method: 'GET'
-    };
-
-    $.ajax(req).then(function(response) {
-        console.log(response);
-        console.log(response[0].id);
-        var id = response[0].id;
-
-        var idLink = response[0].sourceUrl;
-        $("#recipe-results").append(`Prep Time: ${response[0].preparationMinutes}`, `Total Cooking Time: ${response[0].cookingMinutes}`);
-
-    });
-
-
-    }*/
-    
-
-  $(document).on("click", ".btn-primary", function() {
+  $(document).on("click", ".btn-primary", function(event) {
       event.preventDefault();
+
+     $("#recipe-results").empty(); 
     var term = $("#addIngredient").val().trim();
 
     console.log(term);

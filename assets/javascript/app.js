@@ -28,6 +28,8 @@ $(document).ready(function() {
           $("#recipe-results").append(`${cardInfo}`);
         });
       });
+    }).error(function(error){
+        console.log("First AJAX call failed: " + error.code);
     });
   }
 

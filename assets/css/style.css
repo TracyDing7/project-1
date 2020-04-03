@@ -12,14 +12,14 @@
     border-style: solid;
     border-width: 5px;
     border-color: #000000;
-    padding: 10px;
+    padding: 10px 10px 30px 10px;
 }
 
 .recipe-container {
     border-style: solid;
     border-width: 5px;
     border-color: #000000;
-    padding: 10px;
+    padding: 10px 10px 30px 10px;
 }
 
 .navbar {
@@ -44,4 +44,12 @@
 .btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
     background-color: #344a70 !important;
     border-color: #344a70 ;
+}
+.slick-prev:before, .slick-next:before {
+    color:#344a70;
+
+}
+#drink-display, 
+#recipe-results {
+    margin: 0 25px;
 }

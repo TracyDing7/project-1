@@ -1,3 +1,7 @@
+.container {
+    margin-bottom: 1%;
+}
+
 .card {
     margin: 10px;
     padding: 10px;
@@ -52,4 +56,16 @@
 #drink-display, 
 #recipe-results {
     margin: 0 25px;
+}
+
+.btn-group {
+    margin-top: 8%;
+}
+
+#drink-display {
+    margin-top: 8%;
+}
+
+#addIngredient {
+    width: 75%;
 }

@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="spoonacular-api-call-style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>API TEST PAGE</title>
 </head>
 <body>
     
 
-  <div id="btn-div"></div>
-
-
-    <form>
-        <div class="form-group">
-          <label for="addIngredient">enter an ingredient</label>
-          <input type="text" class="form-control" id="addIngredient" />
-        </div>
-        <button type="submit" class="btn btn-primary" id="btn-submit">
-          Submit
-        </button>
-      </form>
       <div class="container">
+        
+  <div id="btn-div"><div><label for="form-check">Select or Enter Your Own Ingredients and Press Submit</label></div></div>
+
+
+  <form>
+      <div class="form-group">
+        <!--<label for="addIngredient">Or, enter your own ingredient(s)</label>-->
+        <input type="text" class="form-control" id="addIngredient" />
+      </div>
+      <button type="submit" class="btn btn-primary" id="btn-submit">
+        Submit
+      </button>
+    </form>
         <div class="md-col-4" id="recipe-results"></div>
       </div>
 

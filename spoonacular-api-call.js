@@ -1,18 +1,24 @@
-/*let commonIngredients = ["tomatoes", "potatoes", "ground beef", "chicken", "turkey", "lettuce", "bread", "rice", "eggs", "cheese", "milk", "butter", "flour", "spinach", "tofu", "mushrooms", "pasta", "onion"];
+let commonIngredients = ["tomatoes", "potatoes", "ground beef", "chicken", "turkey", "rice", "eggs", "cheese", "milk", "pasta", "onion"];
+let ingredientsChecked = [];
 
-
-//function ingredientBtn = 
+//function ingredientBox = 
 for (var i = 0; i < commonIngredients.length; i++) {
-  $("#btn-div").append(
-    `<button class="btn btn-secondary">${commonIngredients[i]}</button>`
-  );
+  var createCheckbox = (`<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="inlineCheckbox${i}" value="${commonIngredients[i]}"> <label class="form-check-label" for="inlineCheckbox${i}">${commonIngredients[i]}</label></div>`);
+
+  $("#btn-div").append(createCheckbox);  
 }
 
-$(document).on("click", ".btn-secondary", function() {
-  var ingredient = $(this).val();
+$('input[type="checkbox"]').click(function(){
+  if($(this).is(":checked")){
   console.log($(this).val());
-});
-*/
+  ingredientsChecked.push($(this).val());
+
+  }
+  else if($(this).is(":not(:checked)")){
+  ingredientsChecked.pop($(this).val());
+  }
+}); 
+
 
 
 function getRecipeList(term) {
@@ -38,7 +44,7 @@ function getRecipeList(term) {
             console.log("the value of i is " + i);
             console.log(res);
 
-            var cardInfo = (`<div class="card" style="width: 18rem;"><img class="card-img-top" src="${res.image}" alt="${res.title}"/><div class="card-body"><h5 class="card-title">${res.title}</h5><p>Total Cook Time: ${res.readyInMinutes} minutes Serves: ${res.servings}</p><a href="${res.sourceUrl}" target="_blank" class="btn btn-secondary">Submit</a></div></div>`);
+            var cardInfo = (`<div class="card"><img class="card-img-top" src="${res.image}" alt="${res.title}"/><div class="card-body"><h5 class="card-title">${res.title}</h5><p>Total Cook Time: ${res.readyInMinutes} minutes Serves: ${res.servings}</p><a href="${res.sourceUrl}" target="_blank" class="btn btn-secondary">Submit</a></div></div>`);
 
             $("#recipe-results").append(`${cardInfo}`);
           });
@@ -56,7 +62,9 @@ function getRecipeList(term) {
     var term = $("#addIngredient").val().trim();
 
     console.log(term);
+    //ingredientsChecked.push(term);
 
+    if ()
     getRecipeList(term);
 
   });

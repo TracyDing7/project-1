@@ -26,8 +26,9 @@ $(document).ready(function() {
           var cardInfo = `<div class="card" style="width: 18rem;"><img class="card-img-top" src="${res.image}" alt="${res.title}"/><div class="card-body"><h5 class="card-title">${res.title}</h5><p>Total Cook Time: ${res.readyInMinutes} minutes Serves: ${res.servings}</p><a href="${res.sourceUrl}" target="_blank" class="btn btn-secondary">Let's Cook!</a></div></div>`;
 
           $("#recipe-results").append(`${cardInfo}`);
-        });
+        });        
       });
+     
     }).error(function(error){
         console.log("First AJAX call failed: " + error.code);
     });
@@ -70,6 +71,14 @@ $(document).ready(function() {
         var drinkCard = `<div class="card" style="width: 18rem;"><img class="card-img-top" src="${drinkImg}" alt="${drinkName}"/><div class="card-body"><a href="${drinkUrl}" target="_blank"><h5 class="card-title">${drinkName}</h5></a></div></div>`;
         $("#drink-display").append(`${drinkCard}`);
       }
+      $('#drink-display').slick({
+        infinite: false,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        autoplay: true,
+        arrows: true,
+        dots: true
+      });
     });
   });
 });

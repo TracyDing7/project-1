@@ -34,3 +34,14 @@
 .icon-img {
     margin-left: 25%;
 }
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    
+    background-color: #5876a8 !important;
+    border-color: #5876a8;
+}
+
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+    background-color: #344a70 !important;
+    border-color: #344a70 ;
+}

@@ -28,9 +28,17 @@ $(document).ready(function () {
 
                 // $("#drink-display").append(`<img class="drink-image" src="${drinkImg}">`);
 
-                var drinkCard = (`<div class="card" style="width: 18rem;"><img class="card-img-top" src="${drinkImg}" alt="${drinkName}"/><div class="card-body"><a href="${drinkUrl}" target="_blank"><h5 class="card-title">${drinkName}</h5></a></div></div>`);
+                var drinkCard = (`<div class="card autoplay" style="width: 18rem;"><img class="card-img-top" src="${drinkImg}" alt="${drinkName}"/><div class="card-body"><a href="${drinkUrl}" target="_blank"><h5 class="card-title">${drinkName}</h5></a></div></div>`);
                 $("#drink-display").append(`${drinkCard}`);
             }
         })
     })
+
+    $('.autoplay').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      });
+
 })

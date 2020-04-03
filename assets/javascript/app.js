@@ -69,7 +69,7 @@ $(document).ready(function () {
                 var drinkId = response.drinks[i].idDrink;
                 var drinkImg = response.drinks[i].strDrinkThumb;
                 var drinkUrl = "https://www.thecocktaildb.com/drink/" + drinkId;
-                var drinkCard = (`<div class="card" style="width: 18rem;"><img class="card-img-top" src="${drinkImg}" alt="${drinkName}"/><div class="card-body"><a href="${drinkUrl}" target="_blank"><h5 class="card-title">${drinkName}</h5></a></div></div>`);
+                var drinkCard = (`<div class="card autoplay" style="width: 18rem;"><img class="card-img-top" src="${drinkImg}" alt="${drinkName}"/><div class="card-body"><a href="${drinkUrl}" target="_blank"><h5 class="card-title">${drinkName}</h5></a></div></div>`);
                 $("#drink-display").append(`${drinkCard}`);
             }
         })

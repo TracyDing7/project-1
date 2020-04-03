@@ -12,19 +12,65 @@
 </head>
 
 <body>
+    <!--Simple Navbar-->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/assets/images/2764019.svg" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+            What's for dinner?
+        </a>
+    </nav>
     <!--Food Search section of the index html-->
     <div class="container">
         <div class="row">
-            <div class="col-md-12" id="FOOD-STUFF-PLACEHOLDER">
-                <h1>THIS IS A PLACEHOLDER</h1>
-                <p>foodstuffs here</p>
+            <div class="col-md-6 recipe-container">
+                <h5>Find a recipe</h5>
+                <div id="btn-div"></div>
+                <form>
+                    <div class="form-group">
+                        <label for="addIngredient">Enter ingredients - example: chicken, butter, rosemary</label>
+                        <input type="text" class="form-control" id="addIngredient" />
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btn-submit">
+                        Submit Ingredients
+                    </button>
+                </form>
+                <div class="container">
+                    <div class="md-col-4" id="recipe-results"></div>
+                </div>
+            </div>
+            <div class="drink-search col-md-6">
+                <h5>Find a cocktail</h5>
+                <p>Select the alcohol base of your cocktail</p>
+                <div class="btn-group dropright">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Pick your poison!
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item alcohol" id="gin" value="gin">Gin</a>
+                        <a class="dropdown-item alcohol" id="vodka" value="vodka">Vodka</a>
+                        <a class="dropdown-item alcohol" id="tequila" value="tequila">Tequila</a>
+                        <a class="dropdown-item alcohol" id="mezcal" value="mezcal">Mezcal</a>
+                        <a class="dropdown-item alcohol" id="rum" value="rum">Rum</a>
+                        <a class="dropdown-item alcohol" id="brandy" value="brandy">Brandy</a>
+                        <a class="dropdown-item alcohol" id="whiskey" value="whiskey">Whiskey</a>
+                        <a class="dropdown-item alcohol" id="scotch" value="scotch">Scotch</a>
+                        <a class="dropdown-item alcohol" id="bourbon" value="bourbon">Bourbon</a>
+                    </div>
+                </div>
+                <div id="drink-display">
+                    <!--this is where all of the returned elements from drink search will appear-->
+                </div>
             </div>
         </div>
     </div>
-    <!--Drink Search section of the index html-->
+    </div>
+    </div>
+    <!-- Drink Search section of the index html
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="drink-search">
                     <h5>Select the alcohol base of your cocktail</h5>
                     <div class="btn-group dropright">
@@ -45,25 +91,24 @@
                         </div>
                     </div>
                     <div id="drink-display">
-                        <!--this is where all of the returned elements from drink search will appear-->
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
-        <!--jQuery and Bootstrap things-->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-        <!--api key doc-->
-        <script src="api_keys.js"></script>
-        <!--our javascript-->
-        <script src="assets/javascript/app.js"></script>
+    <!--jQuery and Bootstrap things-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!--api key doc-->
+    <script src="api_keys.js"></script>
+    <!--our javascript-->
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>

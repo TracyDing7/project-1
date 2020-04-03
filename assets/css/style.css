@@ -21,3 +21,16 @@
     border-color: #000000;
     padding: 10px;
 }
+
+.navbar {
+    margin-bottom: 1%;
+}
+
+.sub-header {
+    display: block;
+    color: white;
+}
+
+.icon-img {
+    margin-left: 25%;
+}
